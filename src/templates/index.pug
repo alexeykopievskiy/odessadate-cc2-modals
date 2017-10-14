@@ -2,6 +2,35 @@ doctype html
 html
     include _includes/_head.pug
     body
+      section.cc2-modal__wrapper
+        div.cc2-modal
+          div.cc2-modal__header
+            img(src="files/img/logo.png", alt="Odessa logo")
+          div.cc2-modal__body
+            form
+              div.cc2-modal__section.cc2-modal__section--white
+                h2 Membership Verification
+                p Thank you for using OdessaDate.
+                  br 
+                  span Your account is temporary limited 
+                  | because some information on the credit card you used does not match your account information.
+                p For your protection we would like to 
+                  span confirm your identity 
+                  | before continuing to make purchases.
+                  br 
+                  | Please, verify your identity by the following method: 
+              div.cc2-modal__section.cc2-modal__section--gray
+                h2 Membership Verification
+                p Thank you for using OdessaDate.
+                  br 
+                  span Your account is temporary limited 
+                  | because some information on the credit card you used does not match your account information.
+                p For your protection we would like to 
+                  span confirm your identity 
+                  | before continuing to make purchases.
+                  br 
+                  | Please, verify your identity by the following method: 
+          div.cc2-modal__footer
       
     script(src="https://code.jquery.com/jquery-3.2.1.js"
           integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
