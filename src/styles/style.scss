@@ -75,6 +75,17 @@ html, body {
     padding: 0 23px;
   }
 
+  &__call {
+    width: 740px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+    }
+  }
+
   &__form {
 
     &-upload {
@@ -162,6 +173,10 @@ html, body {
       margin: auto;
     }
 
+    &-phone {
+      margin-top: 20px;
+    }
+
     &-divider {
       font-size: 20px;
       line-height: 43px;
@@ -189,14 +204,20 @@ html, body {
 
     &-label {
       font-size: 16px;
-      text-transform: uppercase;
       margin-right: 8px;
       margin-bottom: 0;
+
+      &--absolute {
+        position: absolute;
+        left: -125px;
+        top: 11px;
+      }
     }
 
     &-group {
       display: flex;
       margin: 4px 0;
+      position: relative;
 
       &--center {
         align-items: center;
