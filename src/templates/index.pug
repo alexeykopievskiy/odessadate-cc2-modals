@@ -1,6 +1,58 @@
 doctype html
 html
     include _includes/_head.pug
+    script#qq-template(type='text/template')
+      .qq-uploader-selector.qq-uploader.qq-gallery(qq-drop-area-text='Drop files here').cc2-modal__form-upload
+        .qq-total-progress-bar-container-selector.qq-total-progress-bar-container
+          .qq-total-progress-bar-selector.qq-progress-bar.qq-total-progress-bar(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='100')
+        .qq-upload-drop-area-selector.qq-upload-drop-area(qq-hide-dropzone='')
+          span.qq-upload-drop-area-text-selector
+        img(src="files/img/upload.png")
+        p.cc2-modal__form-upload-text Drag and Drop Files Here to Upload
+        .qq-upload-button-selector.qq-upload-button.cc2-modal__form-upload-btn Or Select Files To Upload
+        span.qq-drop-processing-selector.qq-drop-processing
+          span Processing dropped files...
+          span.qq-drop-processing-spinner-selector.qq-drop-processing-spinner
+        ul.qq-upload-list-selector.qq-upload-list(role='region', aria-live='polite', aria-relevant='additions removals')
+          li
+            span.qq-upload-status-text-selector.qq-upload-status-text(role='status')
+            .qq-progress-bar-container-selector.qq-progress-bar-container
+              .qq-progress-bar-selector.qq-progress-bar(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='100')
+            span.qq-upload-spinner-selector.qq-upload-spinner
+            .qq-thumbnail-wrapper
+              img.qq-thumbnail-selector(qq-max-size='120', qq-server-scale='')
+            button.qq-upload-cancel-selector.qq-upload-cancel(type='button') X
+            button.qq-upload-retry-selector.qq-upload-retry(type='button')
+              span.qq-btn.qq-retry-icon(aria-label='Retry')
+              |                         Retry
+            .qq-file-info
+              .qq-file-name
+                span.qq-upload-file-selector.qq-upload-file
+                span.qq-edit-filename-icon-selector.qq-btn.qq-edit-filename-icon(aria-label='Edit filename')
+              input.qq-edit-filename-selector.qq-edit-filename(tabindex='0', type='text')
+              span.qq-upload-size-selector.qq-upload-size
+              button.qq-btn.qq-upload-delete-selector.qq-upload-delete(type='button')
+                span.qq-btn.qq-delete-icon(aria-label='Delete')
+              button.qq-btn.qq-upload-pause-selector.qq-upload-pause(type='button')
+                span.qq-btn.qq-pause-icon(aria-label='Pause')
+              button.qq-btn.qq-upload-continue-selector.qq-upload-continue(type='button')
+                span.qq-btn.qq-continue-icon(aria-label='Continue')
+        dialog.qq-alert-dialog-selector
+          .qq-dialog-message-selector
+          .qq-dialog-buttons
+            button.qq-cancel-button-selector(type='button') Close
+        dialog.qq-confirm-dialog-selector
+          .qq-dialog-message-selector
+          .qq-dialog-buttons
+            button.qq-cancel-button-selector(type='button') No
+            button.qq-ok-button-selector(type='button') Yes
+        dialog.qq-prompt-dialog-selector
+          .qq-dialog-message-selector
+          input(type='text')
+          .qq-dialog-buttons
+            button.qq-cancel-button-selector(type='button') Cancel
+            button.qq-ok-button-selector(type='button') Ok
+
     body
       section.cc2-modal__wrapper
         div.cc2-modal
@@ -70,10 +122,7 @@ html
                   form.cc2-modal__form
                     div.cc2-modal__form-upload-container 
                       div.cc2-modal__form-uploader
-                        div.cc2-modal__form-upload#dropZone 
-                          img(src="files/img/upload.png")
-                          p.cc2-modal__form-upload-text Drag and Drop Files Here to Upload
-                          button.cc2-modal__form-upload-btn Or Select Files To Upload
+                        div#uploader
                       div.cc2-modal__form-info
                         p Please upload your photo ID below. Please be sure that the address on your ID matches the billing address on your credit card.
                         p If the address on your ID does not match the billing address on your card, you may upload a scanned copy of your credit card (front and back).
@@ -88,7 +137,7 @@ html
                     form
                       div.cc2-modal__form-group
                         label.cc2-modal__form-label.cc2-modal__form-label--absolute Phone Number
-                        input.cc2-modal__form-input(type="text", placeholder="Card number")
+                        input.cc2-modal__form-input(type="text", placeholder="Phone number")#phone
                       div.cc2-modal__form-group.cc2-modal__form-group--inline
                         button Submit
           div.cc2-modal__footer
@@ -99,4 +148,10 @@ html
     script(src="https://code.jquery.com/jquery-3.2.1.js"
           integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
           crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js")
     script(src="js/index.js")
+    script.
+      // Some options to pass to the uploader are discussed on the next page
+          var uploader = new qq.FineUploader({
+              element: document.getElementById("uploader")
+          })

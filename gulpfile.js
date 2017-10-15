@@ -120,10 +120,7 @@ gulp.task('svg-generator', function() {
 gulp.task('libs', function() {
     return gulp.src(
       [
-        './node_modules/wings-foundation/src/scripts/progress.js',
-        './node_modules/wings-foundation/src/scripts/utils.js',
-        './src/scripts/tabs.js',
-        './src/scripts/forms.js'
+        './node_modules/fine-uploader/fine-uploader/fine-uploader.js'
       ]
     )
         .pipe(concat(routes.files.libsjs))
@@ -138,7 +135,7 @@ gulp.task('libs', function() {
 /* Scripts (js) ES6 => ES5, minify and concat into a single file.*/
 
 gulp.task('components', function() {
-    return gulp.src(['src/templates/_includes/**/*.js', routes.scripts.js])
+    return gulp.src(['./node_modules/fine-uploader/fine-uploader/fine-uploader.js', routes.scripts.js])
         .pipe(concat(routes.files.basejs))
         .pipe(sourcemaps.init())
             .pipe(babel())

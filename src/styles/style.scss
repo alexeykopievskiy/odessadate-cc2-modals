@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-
+@import "../../node_modules/fine-uploader/fine-uploader/fine-uploader.min.css";
 
 html, body {
   padding: 0;
@@ -110,7 +110,7 @@ html, body {
         color: #8b8b8b;
       }
 
-      button {
+      &-btn {
         height: 34px;
         border-radius: 4px;
         background-image: linear-gradient(to top, rgba(205, 205, 205, 0.86) 0%, rgba(252, 252, 252, 0.86) 100%);
@@ -118,6 +118,9 @@ html, body {
         width: 198px;
         outline: none;
         margin-top: 10px;
+        background: none;
+        color: #000;
+        z-index: 100;
 
         &:hover {
           box-shadow: 0 1px 0 rgba(255, 255, 255, 0.86), inset 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -361,4 +364,52 @@ html, body {
 
 .cc2-modal__upload, .cc2-modal__call {
   display: none;
+}
+
+.qq-upload-list-selector {
+  width: 333px;
+  overflow-y: hidden;
+}
+
+.qq-upload-fail {
+  position: absolute;
+  height: 223px;
+  top: 0;
+  z-index: 101;
+  text-align: center;
+}
+
+.qq-upload-status-text {
+  margin: 5px 0 20px;
+  display: inline-block;
+}
+
+.qq-upload-file {
+  margin: 10px 0 0 0;
+  display: inline-block;
+}
+
+.qq-thumbnail-wrapper {
+  margin-bottom: 10px;
+}
+
+.qq-upload-size {
+  margin-right: 0;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.qq-upload-cancel-selector,
+.qq-upload-retry-selector {
+  height: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.34), inset 0 1px 0 #ffffff;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  background-image: linear-gradient(to top, rgba(205, 205, 205, 0.86) 0%, rgba(252, 252, 252, 0.86) 100%);
+  line-height: 14px;
+}
+
+.qq-upload-retry-selector {
+  margin-right: 0;
 }
