@@ -6,8 +6,9 @@ html
         div.cc2-modal
           div.cc2-modal__header
             img(src="files/img/logo.png", alt="Odessa logo")
+            span.cc2-modal__header-close
           div.cc2-modal__body
-            form
+            form.cc2-modal__form
               div.cc2-modal__section.cc2-modal__section--white
                 h2 Membership Verification
                 p Thank you for using OdessaDate.
@@ -19,18 +20,56 @@ html
                   | before continuing to make purchases.
                   br 
                   | Please, verify your identity by the following method: 
+                div.cc2-modal__form-radio
+                  div.cc2-modal__form-radio-item
+                    input(type="radio" id="cc2-verify" name="cc2-radio")
+                    label(for="cc2-verify") 
+                      span Verify via
+                      p 2 small amounts
+                  div.cc2-modal__form-radio-item
+                    input(type="radio" id="cc2-upload" name="cc2-radio")
+                    label(for="cc2-upload") 
+                      p Upload or fax a photo ID
+                  div.cc2-modal__form-radio-item
+                    input(type="radio" id="cc2-call" name="cc2-radio")
+                    label(for="cc2-call") 
+                      p Call for assistance
               div.cc2-modal__section.cc2-modal__section--gray
-                h2 Membership Verification
-                p Thank you for using OdessaDate.
-                  br 
-                  span Your account is temporary limited 
-                  | because some information on the credit card you used does not match your account information.
-                p For your protection we would like to 
-                  span confirm your identity 
-                  | before continuing to make purchases.
-                  br 
-                  | Please, verify your identity by the following method: 
+                div.cc2-modal__form-wrapper
+                  div.cc2-modal__form-security
+                    img(src="files/img/norton.png")
+                    img(src="files/img/mcafee.png")
+                  div.cc2-modal__form-cards
+                    img(src="files/img/cards.png")
+                  div.cc2-modal__form-container 
+                    div.cc2-modal__form-group
+                      input.cc2-modal__form-input(type="text", placeholder="Card number")
+                    div.cc2-modal__form-group.cc2-modal__form-group--inline
+                      div.cc2-modal__form-group
+                        select(name='month')
+                          option(value='1') 1
+                          option(value='2') 2
+                          option(value='3') 3
+                          option(value='4') 4
+                        span.cc2-modal__form-divider /
+                        select(name='year')
+                          option(value='1') 1
+                          option(value='2') 2
+                          option(value='3') 3
+                          option(value='4') 4
+                      div.cc2-modal__form-group.cc2-modal__form-group--center
+                        label.cc2-modal__form-label CVV
+                        input.cc2-modal__form-input.cc2-modal__form-input--sm.cc2-modal__form-input--center(type="text")
+                    div.cc2-modal__form-group
+                      input.cc2-modal__form-input(type="text", placeholder="Cardholder name")
+                    div.cc2-modal__form-group
+                      input.cc2-modal__form-input(type="text", placeholder="Cardholder surname")
+                    div.cc2-modal__form-group
+                      button Checkout
           div.cc2-modal__footer
+            p If you have any problems please contact Odessa Date Customer Service: 
+              a(href="mailto:info@asian-girls-online.com") info@asian-girls-online.com 
+              | +1 (844) 724-6621
       
     script(src="https://code.jquery.com/jquery-3.2.1.js"
           integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
