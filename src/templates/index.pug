@@ -22,7 +22,7 @@ html
                   | Please, verify your identity by the following method: 
                 div.cc2-modal__form-radio
                   div.cc2-modal__form-radio-item
-                    input(type="radio" id="cc2-verify" name="cc2-radio")
+                    input(type="radio" id="cc2-verify" name="cc2-radio", checked)
                     label(for="cc2-verify") 
                       span Verify via
                       p 2 small amounts
@@ -35,52 +35,53 @@ html
                     label(for="cc2-call") 
                       p Call for assistance
               div.cc2-modal__section.cc2-modal__section--gray
-                //- div.cc2-modal__form-wrapper
-                //-   div.cc2-modal__form-security
-                //-     img(src="files/img/norton.png")
-                //-     img(src="files/img/mcafee.png")
-                //-   div.cc2-modal__form-cards
-                //-     img(src="files/img/cards.png")
-                //-   div.cc2-modal__form-container 
-                //-     div.cc2-modal__form-group
-                //-       input.cc2-modal__form-input(type="text", placeholder="Card number")
-                //-     div.cc2-modal__form-group.cc2-modal__form-group--inline
-                //-       div.cc2-modal__form-group
-                //-         select(name='month')
-                //-           option(value='1') 1
-                //-           option(value='2') 2
-                //-           option(value='3') 3
-                //-           option(value='4') 4
-                //-         span.cc2-modal__form-divider /
-                //-         select(name='year')
-                //-           option(value='1') 1
-                //-           option(value='2') 2
-                //-           option(value='3') 3
-                //-           option(value='4') 4
-                //-       div.cc2-modal__form-group.cc2-modal__form-group--center
-                //-         label.cc2-modal__form-label CVV
-                //-         input.cc2-modal__form-input.cc2-modal__form-input--sm.cc2-modal__form-input--center(type="text")
-                //-     div.cc2-modal__form-group
-                //-       input.cc2-modal__form-input(type="text", placeholder="Cardholder name")
-                //-     div.cc2-modal__form-group
-                //-       input.cc2-modal__form-input(type="text", placeholder="Cardholder surname")
-                //-     div.cc2-modal__form-group
-                //-       button Checkout
-                //- div.cc2-modal__form-wrapper.cc2-modal__upload
-                //-   form.cc2-modal__form
-                //-     div.cc2-modal__form-uploader
-                //-       div.cc2-modal__form-upload#dropZone 
-                //-         img(src="files/img/upload.png")
-                //-         p.cc2-modal__form-upload-text Drag and Drop Files Here to Upload
-                //-         button.cc2-modal__form-upload-btn Or Select Files To Upload
-                //-     div.cc2-modal__form-info
-                //-       p Please upload your photo ID below. Please be sure that the address on your ID matches the billing address on your credit card.
-                //-       p If the address on your ID does not match the billing address on your card, you may upload a scanned copy of your credit card (front and back).
-                //-       p Once approved, you will be able to conyinue making purchases on Odessa Date with Visa and Mastercard. You can upload in either GIF or JPG format.
-                //-       button upload photo
-                //- p You may also fax a copy of your photo ID, together with a copy of your credit card, to 
-                //-   strong +1 (844) 724-6621 
-                //-   | to have it manually approved.
+                div.cc2-modal__form-wrapper.cc2-modal__card
+                  div.cc2-modal__form-security
+                    img(src="files/img/norton.png")
+                    img(src="files/img/mcafee.png")
+                  div.cc2-modal__form-cards
+                    img(src="files/img/cards.png")
+                  div.cc2-modal__form-container 
+                    div.cc2-modal__form-group
+                      input.cc2-modal__form-input(type="text", placeholder="Card number")
+                    div.cc2-modal__form-group.cc2-modal__form-group--inline
+                      div.cc2-modal__form-group
+                        select(name='month')
+                          option(value='1') 1
+                          option(value='2') 2
+                          option(value='3') 3
+                          option(value='4') 4
+                        span.cc2-modal__form-divider /
+                        select(name='year')
+                          option(value='1') 1
+                          option(value='2') 2
+                          option(value='3') 3
+                          option(value='4') 4
+                      div.cc2-modal__form-group.cc2-modal__form-group--center
+                        label.cc2-modal__form-label CVV
+                        input.cc2-modal__form-input.cc2-modal__form-input--sm.cc2-modal__form-input--center(type="text")
+                    div.cc2-modal__form-group
+                      input.cc2-modal__form-input(type="text", placeholder="Cardholder name")
+                    div.cc2-modal__form-group
+                      input.cc2-modal__form-input(type="text", placeholder="Cardholder surname")
+                    div.cc2-modal__form-group
+                      button Checkout
+                div.cc2-modal__form-wrapper.cc2-modal__upload
+                  form.cc2-modal__form
+                    div.cc2-modal__form-upload-container 
+                      div.cc2-modal__form-uploader
+                        div.cc2-modal__form-upload#dropZone 
+                          img(src="files/img/upload.png")
+                          p.cc2-modal__form-upload-text Drag and Drop Files Here to Upload
+                          button.cc2-modal__form-upload-btn Or Select Files To Upload
+                      div.cc2-modal__form-info
+                        p Please upload your photo ID below. Please be sure that the address on your ID matches the billing address on your credit card.
+                        p If the address on your ID does not match the billing address on your card, you may upload a scanned copy of your credit card (front and back).
+                        p Once approved, you will be able to conyinue making purchases on Odessa Date with Visa and Mastercard. You can upload in either GIF or JPG format.
+                        button upload photo
+                  p You may also fax a copy of your photo ID, together with a copy of your credit card, to 
+                    strong +1 (844) 724-6621 
+                    | to have it manually approved.
                 div.cc2-modal__form-wrapper.cc2-modal__call
                   p Please enter your phone number below. Once approved, you will be able to continue making purchases on OdessaDate with Visa and Mastercard.
                   div.cc2-modal__form-container.cc2-modal__form-phone

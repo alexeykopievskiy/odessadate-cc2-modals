@@ -73,6 +73,7 @@ html, body {
 
   &__upload {
     padding: 0 23px;
+    flex-direction: column;
   }
 
   &__call {
@@ -97,6 +98,12 @@ html, body {
       align-items: center;
       justify-content: center;
       flex-direction: column;
+
+      &-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       &-text {
         font-size: 13px;
@@ -346,4 +353,12 @@ html, body {
       color: #666666;
     }
   }
+}
+
+.cc2-modal__card {
+  display: flex;
+}
+
+.cc2-modal__upload, .cc2-modal__call {
+  display: none;
 }
